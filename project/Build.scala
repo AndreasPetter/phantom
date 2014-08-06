@@ -8,7 +8,7 @@ import scoverage.ScoverageSbtPlugin.instrumentSettings
 object phantom extends Build {
 
   val newzlyUtilVersion = "0.1.18"
-  val datastaxDriverVersion = "2.1.0-beta1"
+  val datastaxDriverVersion = "2.1.0-rc2-SNAPSHOT"
   val scalatestVersion = "2.2.0-M1"
   val finagleVersion = "6.17.0"
   val scroogeVersion = "3.15.0"
@@ -93,8 +93,9 @@ object phantom extends Build {
     version := "0.8.10",
     scalaVersion := "2.10.4",
     resolvers ++= Seq(
-      "Typesafe repository snapshots" at "http://repo.typesafe.com/typesafe/snapshots/",
-      "Typesafe repository releases" at "http://repo.typesafe.com/typesafe/releases/",
+      "Local Maven Repository"           at "file://"+Path.userHome.absolutePath+"/.m2/repository",
+      "Typesafe repository snapshots"    at "http://repo.typesafe.com/typesafe/snapshots/",
+      "Typesafe repository releases"     at "http://repo.typesafe.com/typesafe/releases/",
       "Sonatype repo"                    at "https://oss.sonatype.org/content/groups/scala-tools/",
       "Sonatype releases"                at "https://oss.sonatype.org/content/repositories/releases",
       "Sonatype snapshots"               at "https://oss.sonatype.org/content/repositories/snapshots",
